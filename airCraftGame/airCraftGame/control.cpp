@@ -16,5 +16,32 @@ void Control::wait_press_enter(){
 }
 
 void Control::init_my_plane(AirCraft myPlane){
-	myPlane.draw_my_plane(15,20);
+	myPlane.draw_my_plane();
+}
+
+void Control::press_direction_key(AirCraft myPlane){
+	while (status != EXIT){
+		int kbval = _getch();//get keyboard value
+		myPlane.destroy_my_plane();
+		switch (kbval){
+		case VK_UP:{
+			myPlane.mv_up();
+			break; }
+		case VK_LEFT:{
+			myPlane.mv_left();
+			break;
+		}
+		case VK_DOWN:{
+			myPlane.mv_down(); break;
+		}
+		case VK_RIGHT:{
+			myPlane.mv_right(); break;
+		}
+		case VK_ESCAPE:{
+			status = EXIT;
+			break;//restart
+		}
+		}
+		myPlane.draw_my_plane();
+	}
 }

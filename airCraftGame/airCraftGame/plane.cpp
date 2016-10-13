@@ -3,17 +3,26 @@
 //void cursorPos(int x, int y);
 
 void AirCraft::mv_up(){
-	
+	if (x > 1)x--;
 }
-void AirCraft::mv_down(){}
+void AirCraft::mv_down(){
+	if (x < 15)x++;
+}
 void AirCraft::mv_left(){
 	if (y > 2)y--;
 }
 void AirCraft::mv_right(){
-	if (y < 32)y++;
+	if (y < 39)y++;
 }
 
-void AirCraft::draw_my_plane(int xp,int yp){
+void AirCraft::draw_my_plane(){
 	cursorPos(x,y-1);//
-	cout << "x|x";
+	cout << "pHq";
+	//cursorPos(x , y - 2);
+	//cout << "H-H";
+}
+
+void AirCraft::destroy_my_plane(){
+	cursorPos(x, y - 1);
+	cout << "   ";
 }

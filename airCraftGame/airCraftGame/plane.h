@@ -18,5 +18,6 @@ public:
 	//shoot bullet
 	void shooting();
 
-	void draw_my_plane(int xp,int yp);
+	void draw_my_plane();
+	void destroy_my_plane();
 };

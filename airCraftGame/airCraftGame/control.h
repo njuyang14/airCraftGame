@@ -12,6 +12,7 @@ public:
 	void setStatus(int stat){ status = stat; }
 	void wait_press_enter();
 	void init_my_plane(AirCraft myPlane);
+	void press_direction_key(AirCraft myPlane);
 	void appear_enemy_plane();
 
 	//graphic design

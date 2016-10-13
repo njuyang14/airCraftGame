@@ -10,15 +10,22 @@ void cursorPos(int x,int y){
 	SetConsoleCursorPosition(hOut, pos);
 }
 
+void cursorHide(){
+	CONSOLE_CURSOR_INFO cursor;
+	GetConsoleCursorInfo(hOut, &cursor);
+	cursor.bVisible = false;
+	SetConsoleCursorInfo(hOut, &cursor);
+}
+
 void Control::draw_wall(){
 	system("cls");
 	for (int i = 0; i < 70; i++)
 		cout << "-";
 	cout << endl;
 
-	for (int i = 0; i < 15; i++){
+	for (int i = 0; i < 15; i++){//battle field = 15*40
 		for (int j = 0; j < 70; j++){
-			if (j == 0 || j == 69||j==45)cout << "|";
+			if (j == 0 || j == 69||j==41)cout << "|";
 			else
 				cout << " ";
 		}
@@ -29,9 +36,9 @@ void Control::draw_wall(){
 		cout << "-";
 
 	//draw tips in the right console
-	cursorPos(5, 55);
+	cursorPos(5, 52);
 	cout << "Welcome!";
-	cursorPos(6, 50);
+	cursorPos(6, 45);
 	cout << "press Enter to start!";
 }
 
