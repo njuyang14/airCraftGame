@@ -81,6 +81,7 @@
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="control.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyBullet.cpp" />
     <ClCompile Include="plane.cpp" />
     <ClCompile Include="ui.cpp" />
   </ItemGroup>

@@ -16,13 +16,34 @@ void AirCraft::mv_right(){
 }
 
 void AirCraft::draw_my_plane(){
-	cursorPos(x,y-1);//
+	cursorPos(x,y-1);
 	cout << "pHq";
-	//cursorPos(x , y - 2);
-	//cout << "H-H";
 }
 
 void AirCraft::destroy_my_plane(){
 	cursorPos(x, y - 1);
 	cout << "   ";
+}
+
+void AirCraft::shooting(){
+	MyBullet blt = MyBullet(x, y);
+	bullet_array.push_back(blt);
+
+	//reflash the screen for bullet
+	list<MyBullet>::iterator bullet_iterator;
+	for (bullet_iterator = bullet_array.begin();bullet_iterator != bullet_array.end();){
+		if (bullet_iterator->is_bullet_in_screen()){
+			int *t = bullet_iterator->get_mid();
+			if (t[0]!=x)bullet_iterator->destroy_my_bullet();
+			bullet_iterator->bullet_move();
+			bullet_iterator->draw_my_bullet();
+			bullet_iterator++;
+		}
+		else{
+			bullet_iterator->destroy_my_bullet();
+			list<MyBullet>::iterator it_delete = bullet_iterator;
+			bullet_iterator++;//防止断链
+			bullet_array.erase(it_delete);
+		}
+	}
 }

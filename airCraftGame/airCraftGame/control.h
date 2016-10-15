@@ -1,5 +1,5 @@
 #include"plane.h"
-#include"enemy.h"
+//#include"enemy.h"
 
 #define EXIT 0
 #define START 1
@@ -12,7 +12,7 @@ public:
 	void setStatus(int stat){ status = stat; }
 	void wait_press_enter();
 	void init_my_plane(AirCraft myPlane);
-	void press_direction_key(AirCraft myPlane);
+	void press_key(AirCraft myPlane);//player control
 	void appear_enemy_plane();
 
 	//graphic design

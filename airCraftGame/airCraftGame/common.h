@@ -1,7 +1,6 @@
 #include"control.h"
 #include<conio.h>
-#include<iostream>
-using namespace std;
+#include<time.h>
 
 void cursorPos(int x, int y);
 void cursorHide();

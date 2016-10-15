@@ -12,9 +12,9 @@ int main(){
 			break;
 		else{
 			myGame.init_my_plane(myPlane);
-			myGame.press_direction_key(myPlane);
+			myGame.press_key(myPlane);
 		}
-		getchar();
+		//getchar();
 	}
 	
 	return 0;
