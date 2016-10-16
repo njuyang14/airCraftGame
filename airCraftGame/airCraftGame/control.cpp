@@ -24,22 +24,23 @@ void Control::press_key(AirCraft myPlane){
 	clock_t enemy_appear = clock();
 	clock_t enemy_move = clock();
 
+	int num = 0;
 	while (status ==START){
-		if (clock() - enemy_appear >= 2000){//敌机2秒出现一只
+		if (clock() - enemy_appear >= 2000/*&&num==0*/ ){//敌机2秒出现一只
 			enemy_appear = clock();
 			appear_enemy_plane();
+			num = 1;
 		}
 
-		if ((clock() - my_bullet_start) >= 300){//我方0.3秒发射一枚子弹
+		if ((clock() - my_bullet_start) >= 1000){//我方秒发射一枚子弹
 			my_bullet_start = clock();
 			myPlane.shooting();		
 		}
 
-		if (clock() - enemy_move >= 500){//敌方0.5秒移动一次
+		if (clock() - enemy_move >= 1000){//敌方秒移动一次
 			enemy_move = clock();
 			all_enemy_move(myPlane);
 		}
-		
 
 		if (_kbhit()){
 			//myPlane.shooting();
@@ -83,23 +84,34 @@ void Control::all_enemy_move(AirCraft myPlane){
 	for (it = enemy_array.begin(); it != enemy_array.end();){
 		it->destroy_my_plane();
 		it->mv_down();
-
-		if ((myPlane.getx() == it->getx() && myPlane.gety() == it->gety())||it->hit_plane(myPlane.getx(),myPlane.gety())){//my aircraft crash enemy
-			//cursorPos(18, 0); cout << "crash";                                                 //my plane is hit by enemy
-			myPlane.destroy_my_plane();
-			myPlane.clear_all_bullet();
-			status = NEXT;
+		//int temp = it->is_hit(myPlane);
+		int temp = myPlane.remove_one_bullet(it->getx(),it->gety());
+		if (temp==1){//is hit
+			list<Enemy>::iterator it2=it;
+			it->destroy_my_plane();
+			it->is_hit(myPlane);
+			//it->clear_all_bullet();
 			it++;
+			enemy_array.erase(it2);
 		}
-		else{
-			if (it->getx() != 15){
-				it->draw_my_plane();
+		else{//is not hit
+			if ((myPlane.getx() == it->getx() && myPlane.gety() == it->gety()) || it->hit_plane(myPlane.getx(), myPlane.gety())){//my aircraft crash enemy
+				//my plane is hit by enemy
+				myPlane.destroy_my_plane();
+				myPlane.clear_all_bullet();
+				status = NEXT;
 				it++;
 			}
 			else{
-				list<Enemy>::iterator it1 = it;
-				it++;
-				enemy_array.erase(it1);
+				if (it->getx() != 15){
+					it->draw_my_plane();
+					it++;
+				}
+				else{
+					list<Enemy>::iterator it1 = it;
+					it++;
+					enemy_array.erase(it1);
+				}
 			}
 		}
 	}

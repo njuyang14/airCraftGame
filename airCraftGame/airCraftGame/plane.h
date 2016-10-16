@@ -11,9 +11,8 @@ protected:
 	//position of airCraft
 	int x;
 	int y;
-	
-public:
 	list<MyBullet> bullet_array;//save my bullet on display
+public:
 
 	AirCraft(){}
 
@@ -38,6 +37,7 @@ public:
 	//shoot bullet
 	void shooting();
 	void clear_all_bullet();
+	int remove_one_bullet(int enemy_x,int enemy_y);
 
 	void draw_my_plane();
 	void destroy_my_plane();

@@ -1,8 +1,26 @@
-﻿生成启动时间为 2016/10/16 星期日 下午 17:16:37。
+﻿生成启动时间为 2016/10/16 星期日 下午 23:41:54。
      1>项目“D:\Github\airCraftGame\airCraftGame\airCraftGame\airCraftGame.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\应用软件\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt control.cpp
-         control.cpp
+         D:\应用软件\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyBullet.cpp enemy.cpp main.cpp plane.cpp ui.cpp
+         ui.cpp
+     1>c:\program files (x86)\windows kits\8.1\include\um\winuser.h(454): warning C4005: “VK_RETURN”: 宏重定义
+                 d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(10) : 参见“VK_RETURN”的前一个定义
+     1>c:\program files (x86)\windows kits\8.1\include\um\winuser.h(470): warning C4005: “VK_ESCAPE”: 宏重定义
+                 d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(11) : 参见“VK_ESCAPE”的前一个定义
+     1>c:\program files (x86)\windows kits\8.1\include\um\winuser.h(482): warning C4005: “VK_LEFT”: 宏重定义
+                 d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(14) : 参见“VK_LEFT”的前一个定义
+     1>c:\program files (x86)\windows kits\8.1\include\um\winuser.h(483): warning C4005: “VK_UP”: 宏重定义
+                 d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(12) : 参见“VK_UP”的前一个定义
+     1>c:\program files (x86)\windows kits\8.1\include\um\winuser.h(484): warning C4005: “VK_RIGHT”: 宏重定义
+                 d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(15) : 参见“VK_RIGHT”的前一个定义
+     1>c:\program files (x86)\windows kits\8.1\include\um\winuser.h(485): warning C4005: “VK_DOWN”: 宏重定义
+                 d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(13) : 参见“VK_DOWN”的前一个定义
+         main.cpp
+         enemy.cpp
+         MyBullet.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         plane.cpp
        Link:
          D:\应用软件\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Github\airCraftGame\airCraftGame\Debug\airCraftGame.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Github\airCraftGame\airCraftGame\Debug\airCraftGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Github\airCraftGame\airCraftGame\Debug\airCraftGame.lib" /MACHINE:X86 Debug\enemy.obj
          Debug\control.obj
@@ -15,4 +33,4 @@
 
 生成成功。
 
-已用时间 00:00:21.10
+已用时间 00:00:16.13
