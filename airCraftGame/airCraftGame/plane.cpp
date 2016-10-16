@@ -47,3 +47,13 @@ void AirCraft::shooting(){
 		}
 	}
 }
+
+void AirCraft::clear_all_bullet(){
+	list<MyBullet>::iterator it;
+	for (it = bullet_array.begin(); it != bullet_array.end();){
+		list<MyBullet>::iterator it1=it;
+		it->destroy_my_bullet();
+		it++;
+		bullet_array.erase(it1);
+	}
+}

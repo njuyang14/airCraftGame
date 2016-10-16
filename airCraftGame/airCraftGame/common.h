@@ -1,3 +1,6 @@
+#ifndef _COMMON_H_
+#define _COMMON_H_
+
 #include"control.h"
 #include<conio.h>
 #include<time.h>
@@ -12,3 +15,5 @@ void cursorHide();
 #define VK_RIGHT 100
 #define VK_BOMB 98
 #define VK_SHOOT 32
+
+#endif

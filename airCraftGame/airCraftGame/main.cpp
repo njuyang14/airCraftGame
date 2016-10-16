@@ -5,17 +5,23 @@ int main(){
 	cursorHide();
 	while (1){
 		Control myGame;
-		AirCraft myPlane(14,20);
 		myGame.draw_wall();
 		myGame.wait_press_enter();
+		while (1){
+			if (myGame.getStatus() == START ){
+				AirCraft myPlane(14, 20);
+				myGame.init_my_plane(myPlane);
+				myGame.press_key(myPlane);
+			}
+			else if (myGame.getStatus() == NEXT){
+				myGame.setStatus(START);
+			}
+			else{
+				break;
+			}
+		}
 		if (myGame.getStatus() == EXIT)
 			break;
-		else{
-			myGame.init_my_plane(myPlane);
-			myGame.press_key(myPlane);
-		}
-		//getchar();
 	}
-	
 	return 0;
 }
