@@ -58,21 +58,20 @@ void AirCraft::clear_all_bullet(){
 	}
 }
 
-int AirCraft::remove_one_bullet(int enemy_x, int enemy_y){
-	int flag = 0;
+bool AirCraft::remove_one_bullet(int enemy_x, int enemy_y){
 	list<MyBullet>::iterator it;
 	for (it = AirCraft::bullet_array.begin(); it != AirCraft::bullet_array.end();){
 		int *t = it->get_mid();
-		if ( t[1] == enemy_y&&t[0] == enemy_x + 1 ){
+		if ( (t[1] == enemy_y&&t[0] == enemy_x + 1)||(t[1]==enemy_y&&t[0]==enemy_x) ){
 			list<MyBullet>::iterator it1 = it;
 			it->destroy_my_bullet();
 			it++;
 			AirCraft::bullet_array.erase(it1);//?can not remove
-			flag = 1;
+			return true;
 		}
 		else{
 			it++;
 		}
 	}
-	return flag;
+	return false;
 }

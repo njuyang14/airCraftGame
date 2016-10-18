@@ -11,15 +11,16 @@
 class Control{
 private:
 	int status;
+	AirCraft myPlane;
 	list<Enemy> enemy_array;
 public:
 	int getStatus(){ return status; }
 	void setStatus(int stat){ status = stat; }
 	void wait_press_enter();
-	void init_my_plane(AirCraft myPlane);
-	void press_key(AirCraft myPlane);//player control
+	void init_my_plane();
+	void press_key();//player control
 	void appear_enemy_plane();
-	void all_enemy_move(AirCraft myPlane);
+	void all_enemy_move();
 
 	//graphic design
 	void draw_menu();

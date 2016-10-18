@@ -15,11 +15,12 @@ void Control::wait_press_enter(){
 	}
 }
 
-void Control::init_my_plane(AirCraft myPlane){
+void Control::init_my_plane(){
+	myPlane = AirCraft(14, 20);
 	myPlane.draw_my_plane();
 }
 
-void Control::press_key(AirCraft myPlane){
+void Control::press_key(){
 	clock_t my_bullet_start = clock();
 	clock_t enemy_appear = clock();
 	clock_t enemy_move = clock();
@@ -39,7 +40,7 @@ void Control::press_key(AirCraft myPlane){
 
 		if (clock() - enemy_move >= 1000){//敌方秒移动一次
 			enemy_move = clock();
-			all_enemy_move(myPlane);
+			all_enemy_move();
 		}
 
 		if (_kbhit()){
@@ -79,17 +80,16 @@ void Control::appear_enemy_plane(){
 	enemy_array.push_back(enemy);
 }
 
-void Control::all_enemy_move(AirCraft myPlane){
+void Control::all_enemy_move(){
 	list<Enemy>::iterator it;
 	for (it = enemy_array.begin(); it != enemy_array.end();){
 		it->destroy_my_plane();
 		it->mv_down();
-		//int temp = it->is_hit(myPlane);
-		int temp = myPlane.remove_one_bullet(it->getx(),it->gety());
-		if (temp==1){//is hit
+		//
+		bool temp = myPlane.remove_one_bullet(it->getx(),it->gety());
+		if (temp){//is hit
 			list<Enemy>::iterator it2=it;
 			it->destroy_my_plane();
-			it->is_hit(myPlane);
 			//it->clear_all_bullet();
 			it++;
 			enemy_array.erase(it2);

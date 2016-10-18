@@ -37,7 +37,7 @@ public:
 	//shoot bullet
 	void shooting();
 	void clear_all_bullet();
-	int remove_one_bullet(int enemy_x,int enemy_y);
+	bool remove_one_bullet(int enemy_x,int enemy_y);
 
 	void draw_my_plane();
 	void destroy_my_plane();
