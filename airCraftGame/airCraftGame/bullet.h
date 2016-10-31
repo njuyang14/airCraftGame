@@ -19,6 +19,13 @@ public:
 
 class EnemyBullet:public MyBullet{
 public:
+	EnemyBullet(){}
+	EnemyBullet(int x, int y){//x and y is aircraft's position
+		mid[0] = x;//from enemy head
+		mid[1] = y;
+	}
+
+	bool is_bullet_in_screen();
 	void bullet_move(){ mid[0]++; }
 	void draw_my_bullet();
 };

@@ -1,9 +1,13 @@
 #include"common.h"
-#include<windows.h>
+#include <cstdio>
 
 //get Handle of cursor position
 HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 HANDLE hIn = GetStdHandle(STD_INPUT_HANDLE);
+
+const RECT Border = { 0, 0, 16 * 70, 16 * 18 * 2 };//矩形位置，尺寸
+const POINT Origin = { 16 * 40, 16 * 0 };//绘图原点
+HDC hDC(GetDC(GetConsoleWindow()));// 绘图设备
 
 void cursorPos(int x,int y){
 	COORD pos = { y, x };
@@ -17,25 +21,33 @@ void cursorHide(){
 	SetConsoleCursorInfo(hOut, &cursor);
 }
 
+void setColor(unsigned int color){
+	//color为0时颜色恢复默认
+	SetConsoleTextAttribute(hOut, FOREGROUND_INTENSITY | color);
+}
+
+void setBackColor(unsigned int color){
+	SetConsoleTextAttribute(hOut, BACKGROUND_INTENSITY | color);
+}
+
+void DrawBorder(void)
+{
+	HPEN hPen(CreatePen(PS_SOLID, 1, RGB(0, 255, 0)));
+	HBRUSH hBrush(CreateSolidBrush(RGB(0, 0, 0)));
+	SelectObject(hDC, hPen);
+	SelectObject(hDC, hBrush);
+	Rectangle(hDC, Border.left, Border.top, Border.right, Border.bottom);
+	MoveToEx(hDC, Origin.x, Origin.y, NULL);
+	LineTo(hDC, Border.right - 16*30, Border.bottom);
+	DeleteObject(hPen);
+	DeleteObject(hBrush);
+}
+
 void Control::draw_wall(){
 	system("cls");
-	for (int i = 0; i < 70; i++)
-		cout << "-";
-	cout << endl;
-
-	for (int i = 0; i < 15; i++){//battle field = 15*40
-		for (int j = 0; j < 70; j++){
-			if (j == 0 || j == 69||j==41)cout << "|";
-			else
-				cout << " ";
-		}
-		cout << endl;
-	}
-
-	for (int i = 0; i < 70; i++)
-		cout << "-";
-
+	
 	//draw tips in the right console
+	DrawBorder();
 	cursorPos(5, 52);
 	cout << "Welcome!";
 	cursorPos(6, 45);

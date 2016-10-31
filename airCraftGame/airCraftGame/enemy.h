@@ -9,13 +9,14 @@ using namespace std;
 
 class Enemy:public AirCraft{
 public:
-	//list<EnemyBullet> bullet_array;
+	list<EnemyBullet> bullet_array;
 	Enemy(){}
 	Enemy(int px, int py){ x = px; y = py; }
 	//shoot bullet
 	void shooting();
 	bool hit_plane(int myx, int myy);
 	void is_hit(AirCraft myPlane);
+	void all_bullet_move();
 
 	void clear_all_bullet();
 	void draw_my_plane();

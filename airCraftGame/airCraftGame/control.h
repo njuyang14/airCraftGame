@@ -21,6 +21,8 @@ public:
 	void press_key();//player control
 	void appear_enemy_plane();
 	void all_enemy_move();
+	void all_enemy_shoot();
+	void all_enemy_bullet_move();
 
 	//graphic design
 	void draw_menu();
