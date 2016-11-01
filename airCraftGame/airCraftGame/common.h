@@ -6,12 +6,22 @@
 #include<time.h>
 #include<windows.h>
 
-
+extern int world[16][40];
 
 void cursorPos(int x, int y);
 void cursorHide();
 void setColor(unsigned int color);
 void setBackColor(unsigned int color);
+
+/**/
+enum object{
+	MY_PLANE = 0,
+	PLANE_WING,
+	MY_BULLET,
+	ENEMY,
+	ENEMY_BULLET,
+	NOTHING
+};
 
 #define VK_RETURN 13
 #define VK_ESCAPE 27

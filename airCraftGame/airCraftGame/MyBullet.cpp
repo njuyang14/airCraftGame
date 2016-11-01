@@ -11,11 +11,13 @@ void MyBullet::draw_my_bullet(){
 	setColor(FOREGROUND_GREEN | FOREGROUND_BLUE);
 	cout << "^";
 	setColor(0);//»Ö¸´Ä¬ÈÏ
+	//world[mid[0]][mid[1]] = MY_BULLET;
 }
 
 void MyBullet::destroy_my_bullet(){
 	cursorPos(mid[0], mid[1]);
 	cout << " ";
+	//world[mid[0]][mid[1]]=NOTHING;
 }
 
 bool MyBullet::is_bullet_in_screen(){

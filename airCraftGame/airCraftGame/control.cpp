@@ -1,10 +1,18 @@
 #include"common.h"
 #include<stdlib.h>
+
+int world[16][40];
+
 void Control::wait_press_enter(){
 	int kbval = _getch();
 	while (1){
 		if (kbval == 13){ 
 			status = START; 
+			for (int i = 1; i < 15; i++){
+				for (int j = 0; j < 39; j++){
+					world[i][j] = NOTHING;
+				}
+			}
 			break;
 		}
 		else if (kbval == 27){
@@ -84,11 +92,39 @@ void Control::press_key(){
 			}
 			myPlane.draw_my_plane();
 		}
+
+		/*refresh the world*/
+		/*for (int i = 1; i < 15; i++){
+			for (int j = 0; j < 39; j++){
+				cursorPos(i,j);
+				switch (world[i][j]){
+				case MY_PLANE:{
+					setColor(FOREGROUND_GREEN | FOREGROUND_BLUE);
+					cout << "pHq";
+					setColor(0); 
+				}
+				case MY_BULLET:{
+					setColor(FOREGROUND_GREEN | FOREGROUND_BLUE);
+					cout << "^";
+					setColor(0);
+					break;
+				}
+				case ENEMY:{
+
+				}
+				case ENEMY_BULLET:{}
+				case NOTHING:{
+					cout << " ";
+				}
+				default:{break; }
+				}
+			}
+		}*/
 	}
 }
 
 void Control::appear_enemy_plane(){
-	int y = 1+rand() % 39;
+	int y = 2+rand() % 38;
 	Enemy enemy = Enemy(1,y);
 	enemy_array.push_back(enemy);
 }
@@ -98,7 +134,7 @@ void Control::all_enemy_move(){
 	for (it = enemy_array.begin(); it != enemy_array.end();){
 		it->destroy_my_plane();
 		it->mv_down();
-		//
+		
 		bool temp = myPlane.remove_one_bullet(it->getx(),it->gety());
 		if (temp){//is hit
 			it->clear_all_bullet();//清楚该敌机所有子弹
@@ -140,6 +176,10 @@ void Control::all_enemy_shoot(){
 void Control::all_enemy_bullet_move(){
 	list<Enemy>::iterator it = enemy_array.begin();
 	for (; it != enemy_array.end(); it++){
-		it->all_bullet_move();
+		if (it->all_bullet_move(myPlane.getx(), myPlane.gety()) == NEXT){
+			myPlane.destroy_my_plane();
+			myPlane.clear_all_bullet();
+			status = NEXT;
+		}
 	}
 }

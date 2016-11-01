@@ -5,15 +5,27 @@ void Enemy::shooting(){
 	bullet_array.push_back(blt);
 }
 
-void Enemy::all_bullet_move(){
+int Enemy::all_bullet_move(int px,int py){
+	//px py是myPlane位置
 	list<EnemyBullet>::iterator it = bullet_array.begin();
+	int stat = START;
 	for (; it != bullet_array.end();){
 		if (it->is_bullet_in_screen()){
 			int *t = it->get_mid();
 			if (t[0] != x)it->destroy_my_bullet();
-			it->bullet_move();
-			it->draw_my_bullet();
-			it++;
+
+			if ((t[0] == px&&t[1]==py)/*||(t[0]>px&&t[1]==py)*/){//判断敌机子弹是否撞上myplane
+				list<EnemyBullet>::iterator it2 = it;
+				it++;
+				bullet_array.erase(it2);
+				it->destroy_my_bullet();
+				stat = NEXT;
+			}
+			else{
+				it->bullet_move();
+				it->draw_my_bullet();
+				it++;
+			}
 		}
 		else{
 			it->destroy_my_bullet();
@@ -22,6 +34,7 @@ void Enemy::all_bullet_move(){
 			bullet_array.erase(it_delete);
 		}
 	}
+	return stat;
 }
 
 void Enemy::destroy_my_plane(){

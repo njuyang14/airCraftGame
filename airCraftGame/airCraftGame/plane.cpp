@@ -20,11 +20,17 @@ void AirCraft::draw_my_plane(){
 	setColor(FOREGROUND_GREEN|FOREGROUND_BLUE);
 	cout << "pHq";
 	setColor(0);
+	/*world[x][y] = MY_PLANE;
+	world[x][y - 1] = PLANE_WING;
+	world[x][y + 1] = PLANE_WING;*/
 }
 
 void AirCraft::destroy_my_plane(){
 	cursorPos(x, y - 1);
 	cout << "   ";
+	/*world[x][y] = NOTHING;
+	world[x][y - 1] = NOTHING;
+	world[x][y + 1] = NOTHING;*/
 }
 
 void AirCraft::shooting(){

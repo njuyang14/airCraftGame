@@ -16,7 +16,7 @@ public:
 	void shooting();
 	bool hit_plane(int myx, int myy);
 	void is_hit(AirCraft myPlane);
-	void all_bullet_move();
+	int all_bullet_move(int px,int py);//px py 是myplane现在位置,返回游戏运行状态
 
 	void clear_all_bullet();
 	void draw_my_plane();

@@ -45,13 +45,14 @@ void DrawBorder(void)
 
 void Control::draw_wall(){
 	system("cls");
-	
 	//draw tips in the right console
+	setColor(FOREGROUND_GREEN);
 	DrawBorder();
-	cursorPos(5, 52);
+	cursorPos(5, 55);
 	cout << "Welcome!";
-	cursorPos(6, 45);
-	cout << "press Enter to start!";
+	cursorPos(6, 48);
+	cout << "press enter to start!";
+	setColor(0);
 }
 
 void Control::draw_menu(){

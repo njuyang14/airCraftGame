@@ -1,32 +1,45 @@
-﻿生成启动时间为 2016/10/31 星期一 下午 22:39:51。
+﻿生成启动时间为 2016/11/1 星期二 上午 10:25:08。
      1>项目“D:\Github\airCraftGame\airCraftGame\airCraftGame\airCraftGame.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\应用软件\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyBullet.cpp enemy.cpp
-         enemy.cpp
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(16): warning C4005: “VK_RETURN”: 宏重定义
+         D:\应用软件\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyBullet.cpp control.cpp plane.cpp
+         plane.cpp
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(26): warning C4005: “VK_RETURN”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(454) : 参见“VK_RETURN”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(17): warning C4005: “VK_ESCAPE”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(27): warning C4005: “VK_ESCAPE”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(470) : 参见“VK_ESCAPE”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(18): warning C4005: “VK_UP”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(28): warning C4005: “VK_UP”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(483) : 参见“VK_UP”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(19): warning C4005: “VK_DOWN”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(29): warning C4005: “VK_DOWN”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(485) : 参见“VK_DOWN”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(20): warning C4005: “VK_LEFT”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(30): warning C4005: “VK_LEFT”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(482) : 参见“VK_LEFT”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(21): warning C4005: “VK_RIGHT”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(31): warning C4005: “VK_RIGHT”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winuser.h(484) : 参见“VK_RIGHT”的前一个定义
+         control.cpp
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(26): warning C4005: “VK_RETURN”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winuser.h(454) : 参见“VK_RETURN”的前一个定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(27): warning C4005: “VK_ESCAPE”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winuser.h(470) : 参见“VK_ESCAPE”的前一个定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(28): warning C4005: “VK_UP”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winuser.h(483) : 参见“VK_UP”的前一个定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(29): warning C4005: “VK_DOWN”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winuser.h(485) : 参见“VK_DOWN”的前一个定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(30): warning C4005: “VK_LEFT”: 宏重定义
+                 c:\program files (x86)\windows kits\8.1\include\um\winuser.h(482) : 参见“VK_LEFT”的前一个定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(31): warning C4005: “VK_RIGHT”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(484) : 参见“VK_RIGHT”的前一个定义
          MyBullet.cpp
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(16): warning C4005: “VK_RETURN”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(26): warning C4005: “VK_RETURN”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(454) : 参见“VK_RETURN”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(17): warning C4005: “VK_ESCAPE”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(27): warning C4005: “VK_ESCAPE”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(470) : 参见“VK_ESCAPE”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(18): warning C4005: “VK_UP”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(28): warning C4005: “VK_UP”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(483) : 参见“VK_UP”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(19): warning C4005: “VK_DOWN”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(29): warning C4005: “VK_DOWN”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(485) : 参见“VK_DOWN”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(20): warning C4005: “VK_LEFT”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(30): warning C4005: “VK_LEFT”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(482) : 参见“VK_LEFT”的前一个定义
-     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(21): warning C4005: “VK_RIGHT”: 宏重定义
+     1>d:\github\aircraftgame\aircraftgame\aircraftgame\common.h(31): warning C4005: “VK_RIGHT”: 宏重定义
                  c:\program files (x86)\windows kits\8.1\include\um\winuser.h(484) : 参见“VK_RIGHT”的前一个定义
          正在生成代码...
        Link:
@@ -41,4 +54,4 @@
 
 生成成功。
 
-已用时间 00:00:21.25
+已用时间 00:00:16.88
