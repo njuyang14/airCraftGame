@@ -20,17 +20,11 @@ void AirCraft::draw_my_plane(){
 	setColor(FOREGROUND_GREEN|FOREGROUND_BLUE);
 	cout << "pHq";
 	setColor(0);
-	/*world[x][y] = MY_PLANE;
-	world[x][y - 1] = PLANE_WING;
-	world[x][y + 1] = PLANE_WING;*/
 }
 
 void AirCraft::destroy_my_plane(){
 	cursorPos(x, y - 1);
 	cout << "   ";
-	/*world[x][y] = NOTHING;
-	world[x][y - 1] = NOTHING;
-	world[x][y + 1] = NOTHING;*/
 }
 
 void AirCraft::shooting(){
@@ -82,4 +76,40 @@ bool AirCraft::remove_one_bullet(int enemy_x, int enemy_y){//子弹碰撞检测,
 		}
 	}
 	return false;
+}
+
+bool Bomb::receive_bomb(int px, int py){
+	if (x == px && (y == py || y == py - 1 || y == py + 1))return true;
+	else
+		return false;
+}
+
+void Bomb::draw_my_plane(){
+	cursorPos(x, y);
+	setColor(FOREGROUND_GREEN | FOREGROUND_RED);
+	cout << "B";
+	setColor(0);
+}
+
+void Bomb::destroy_my_plane(){
+	cursorPos(x, y);
+	cout << " ";
+}
+
+void Life::draw_my_plane(){
+	cursorPos(x, y);
+	setColor(FOREGROUND_BLUE | FOREGROUND_RED);
+	cout << "H";
+	setColor(0);
+}
+
+void Life::destroy_my_plane(){
+	cursorPos(x, y);
+	cout << " ";
+}
+
+bool Life::receive_life(int px, int py){
+	if (x == px && (y == py || y == py - 1 || y == py + 1))return true;
+	else
+		return false;
 }

@@ -9,7 +9,6 @@ int main(){
 		myGame.wait_press_enter();
 		while (1){
 			if (myGame.getStatus() == START ){
-				//AirCraft myPlane(14, 20);
 				myGame.init_my_plane();
 				myGame.press_key();
 			}

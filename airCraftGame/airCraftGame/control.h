@@ -13,7 +13,18 @@ private:
 	int status;
 	AirCraft myPlane;
 	list<Enemy> enemy_array;
+	int score;
+	int life;
+	int bomb_count;
+	Bomb bomb;
+	Life hp;
 public:
+	Control(){
+		score = 0;
+		life = 3;
+		bomb_count = 1;
+	}
+	int printScore();
 	int getStatus(){ return status; }
 	void setStatus(int stat){ status = stat; }
 	void wait_press_enter();
@@ -23,6 +34,9 @@ public:
 	void all_enemy_move();
 	void all_enemy_shoot();
 	void all_enemy_bullet_move();
+	void do_bomb();
+	bool bomb_move();
+	bool life_move();
 
 	//graphic design
 	void draw_menu();

@@ -14,11 +14,11 @@ int Enemy::all_bullet_move(int px,int py){
 			int *t = it->get_mid();
 			if (t[0] != x)it->destroy_my_bullet();
 
-			if ((t[0] == px&&t[1]==py)/*||(t[0]>px&&t[1]==py)*/){//判断敌机子弹是否撞上myplane
+			if ((t[0] == px&&(t[1]==py||t[1]==py-1|| t[1]==py+1))/*||(t[0]>px&&t[1]==py)*/){//判断敌机子弹是否撞上myplane
 				list<EnemyBullet>::iterator it2 = it;
 				it++;
+				it2->destroy_my_bullet();
 				bullet_array.erase(it2);
-				it->destroy_my_bullet();
 				stat = NEXT;
 			}
 			else{
@@ -62,7 +62,7 @@ void Enemy::clear_all_bullet(){
 	list<EnemyBullet>::iterator it;
 	for (it = bullet_array.begin(); it != bullet_array.end();){
 		list<EnemyBullet>::iterator it1 = it;
-		it->destroy_my_bullet();
+		it1->destroy_my_bullet();
 		it++;
 		bullet_array.erase(it1);
 	}
