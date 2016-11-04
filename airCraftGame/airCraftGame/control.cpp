@@ -30,7 +30,7 @@ void Control::init_my_plane(){
 	if (life == 0){
 		do_bomb();//重置画面
 		score = 0;
-		cursorPos(7,63);//清空上一局分数
+		cursorPos(9,63);//清空上一局分数
 		cout << "     ";
 		life = 3;
 	}

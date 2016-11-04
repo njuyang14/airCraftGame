@@ -82,17 +82,17 @@ void Control::draw_wall(){
 	DrawBorder();
 	/*ÏÔÊ¾²Ù×÷°´¼ü*/
 	cursorPos(1,51);
-	cout << "w";
+	cout << "W";
 	cursorPos(3,51);
-	cout << "s";
+	cout << "S";
 	cursorPos(3,46);
-	cout << "a";
+	cout << "A";
 	cursorPos(3,56);
-	cout << "d";
+	cout << "D";
 	cursorPos(1,62);
-	cout << "b";
+	cout << "B";
 	cursorPos(1,68);
-	cout << "r";
+	cout << "R";
 	cursorPos(3,61);
 	cout << "bomb";
 	cursorPos(3,66);

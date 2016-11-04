@@ -1,7 +1,7 @@
 #include"common.h"
 
 int main(){
-	//system("mode con cols=70 lines=20");	
+	system("mode con cols=80 lines=20");	
 	cursorHide();
 	while (1){
 		Control myGame;
